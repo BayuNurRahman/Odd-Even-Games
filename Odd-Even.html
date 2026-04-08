@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ganjil Genap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen" class="card">
+        <h2>Selamat Datang!</h2>
+        <p>Masukkan namamu untuk bermain:</p>
+        <input type="text" id="username-input" placeholder="Nama Pemain..." maxlength="12">
+        <button class="btn-start" onclick="startGame()">Mulai Game</button>
+        <div class="initial-highscore">
+            <hr>
+            <h3>🏆 Top 3 Highscore</h3>
+            <table class="highscore-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Skor</th>
+                    </tr>
+                </thead>
+                <tbody id="initial-highscore-list">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="game-screen" class="card">
+        <div class="stats-row">
+            <div>Skor: <span id="score">0</span></div>
+            <div class="lives-text">Nyawa: <span id="lives">3</span> ❤️</div>
+        </div>
+        <div id="number" class="number-display">?</div>
+        <div class="button-group">
+            <button class="btn-genap" onclick="tebak('genap')">GENAP</button>
+            <button class="btn-ganjil" onclick="tebak('ganjil')">GANJIL</button>
+        </div>
+        <p id="message">Siap bermain?</p>
+    </div>
+
+    <div id="game-over-screen" class="card">
+        <h2>GAME OVER!</h2>
+        <p id="final-msg"></p>
+        <h3>🏆 Top 3 Highscore</h3>
+        <table class="highscore-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Skor</th>
+                </tr>
+            </thead>
+            <tbody id="highscore-list"></tbody>
+        </table>
+        <button class="btn-start" style="margin-top: 1.5rem;" onclick="location.reload()">Main Lagi</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
